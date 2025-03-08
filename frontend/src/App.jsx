@@ -6,13 +6,15 @@ function App() {
   const [name, setName] = useState("");
   const [greeting, setGreeting] = useState("");
   const [error, setError] = useState("");
+  const API_BASE_URL = "https://younglabs-9avu.onrender.com"; // Backend URL
 
   const fetchGreeting = async () => {
     try {
       setGreeting("");
       setError("");
-      const res = await axios.get(`https://your-backend.onrender.com/api/greet?name=${name}`);
-
+  
+      const res = await axios.get(`${API_BASE_URL}/api/greet?name=${name}`);
+  
       setGreeting(res.data.message);
     } catch (err) {
       setError(err.response?.data?.error || "Something went wrong");
