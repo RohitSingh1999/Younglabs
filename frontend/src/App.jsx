@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import './App.css'
 
 function App() {
   const [name, setName] = useState("");
@@ -20,11 +21,13 @@ function App() {
 
   return (
     <div className="container">
+    <div className="main">
       <h2>Greeting App</h2>
       <input type="text" placeholder="Enter your name" value={name} onChange={(e) => setName(e.target.value)} />
-      <button onClick={fetchGreeting}>Get Greeting</button>
+      <button onClick={fetchGreeting}>Get Request</button>
       {greeting && <p>{greeting}</p>}
       {error && <p style={{ color: "red" }}>{error}</p>}
+      </div>
     </div>
   );
 }
