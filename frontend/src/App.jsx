@@ -14,6 +14,9 @@ function App() {
       setError("");
 
       const res = await axios.get(`${API_BASE_URL}/api/greet?name=${name}`);
+      // for localhost link:
+      //  const res = await axios.get(`http://localhost:5000/api/greet?name=${name}`);
+
 
       setGreeting(res.data.message);
     } catch (err) {
