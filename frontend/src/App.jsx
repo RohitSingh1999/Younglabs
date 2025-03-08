@@ -12,9 +12,9 @@ function App() {
     try {
       setGreeting("");
       setError("");
-  
+
       const res = await axios.get(`${API_BASE_URL}/api/greet?name=${name}`);
-  
+
       setGreeting(res.data.message);
     } catch (err) {
       setError(err.response?.data?.error || "Something went wrong");
@@ -23,12 +23,12 @@ function App() {
 
   return (
     <div className="container">
-    <div className="main">
-      <h2>Greeting App</h2>
-      <input type="text" placeholder="Enter your name" value={name} onChange={(e) => setName(e.target.value)} />
-      <button onClick={fetchGreeting}>Get Request</button>
-      {greeting && <p>{greeting}</p>}
-      {error && <p style={{ color: "red" }}>{error}</p>}
+      <div className="main">
+        <h2>Greeting App</h2>
+        <input type="text" placeholder="Enter your name" value={name} onChange={(e) => setName(e.target.value)} />
+        <button onClick={fetchGreeting}>Get Request</button>
+        {greeting && <p>{greeting}</p>}
+        {error && <p style={{ color: "red" }}>{error}</p>}
       </div>
     </div>
   );
