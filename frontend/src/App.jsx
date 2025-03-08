@@ -11,7 +11,7 @@ function App() {
     try {
       setGreeting("");
       setError("");
-      const res = await axios.get(`http://localhost:5000/api/greet?name=${name}`);
+      const res = await axios.get(`https://your-backend.onrender.com/api/greet?name=${name}`);
 
       setGreeting(res.data.message);
     } catch (err) {
